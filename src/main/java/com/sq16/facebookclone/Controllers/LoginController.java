@@ -26,13 +26,13 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public String login(LoginDTO loginDTO ){
-    //loginDTO is creating our method object dependencies
-        // dependency injection through inversion of control
 
-        log.info("LOGGED-IN EMAIL-----> {"+loginDTO.getEmail()+"} ");
-
-        return  "redirect:/users/user/{"+loginDTO.getEmail()+"}";
+    public ModelAndView login(LoginDTO loginDTO ){
+    //loginDTO is creating our method object dependencies dependency injection through inversion of control
+        log.info("USER - EMAIL-----> {"+loginDTO.getEmail()+"} ");
+        return new ModelAndView("profile")
+                .addObject("dashboardMessage",
+                        "Welcome, user with email: "+loginDTO.getEmail());
     }
 
 }

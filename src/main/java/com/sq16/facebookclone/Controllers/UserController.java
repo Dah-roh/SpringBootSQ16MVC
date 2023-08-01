@@ -16,7 +16,7 @@ public class UserController {
 
 
     @GetMapping("/user/{dto}")
-    public ModelAndView getUserProfile(@RequestParam("dto") String email){
+    public ModelAndView getUserProfile(@PathVariable(value="dto") String email){
         log.info("Inside userController class: ---> { "+email+"}");
 
         return new ModelAndView("profile");
