@@ -41,6 +41,7 @@ public class PostController {
         postService.savePost(postDTO);
         List<Post> postList =  postService.findAllPostByUserId(postDTO.getUserId());
         log.info(" Here is this users post: "+ postList);
+        //TODO: IF ERROR: REMEMBER: -> TO HANDLE WHAT HAPPENS AFTER SUCCESSFUL POSTING
         return new ModelAndView("profile").addObject("postList", postList);
     }
 }
