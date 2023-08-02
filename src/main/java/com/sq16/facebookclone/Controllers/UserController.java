@@ -1,5 +1,6 @@
 package com.sq16.facebookclone.Controllers;
 
+import com.sq16.facebookclone.DTOs.PostDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +16,9 @@ public class UserController {
 
 
 
-    @GetMapping("/user/{dto}")
-    public ModelAndView getUserProfile(@PathVariable(value="dto") String email){
-        log.info("Inside userController class: ---> { "+email+"}");
-
-        return new ModelAndView("profile");
+    @GetMapping("/user")
+    public ModelAndView getUserProfile(){
+        log.info("UserController Class --> USER-ID : ");
+        return new ModelAndView("profile").addObject("post", new PostDTO());
     }
 }

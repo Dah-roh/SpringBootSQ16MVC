@@ -5,8 +5,11 @@
     <title>Facebook Clone</title>
 </head>
 <body>
-
-
-<h1 th:text = "${dashboardMessage}"></h1>
+<h2>Posts</h2>
+<form method="post" th:action="@{/post}" th:object="${post}">
+    <label for="post">Password:<textarea th:field="*{contentBody}" id="post" name="post"></textarea></label>
+    <input type="hidden" th:field="*{user.id}">
+    <button type="submit">Post</button>
+</form>
 </body>
 </html>

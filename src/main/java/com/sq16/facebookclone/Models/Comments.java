@@ -1,25 +1,21 @@
 package com.sq16.facebookclone.Models;
 
-import com.sq16.facebookclone.DTOs.PostDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Post extends BaseEntity{
+@Builder
+public class Comments extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String contentBody;
+    private String commentBody;
     @ManyToOne
-    private Users user;
-
-    public Post(PostDTO postDTO){
-        this.contentBody = postDTO.getContentBody();
-        this.user = postDTO.getUser();
-    }
+    private Post post;
 }

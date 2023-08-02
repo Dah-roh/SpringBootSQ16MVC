@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Facebook Clone</title>
+  <style>
+    input {
+      display:  block;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Social Media Application</h1>
+<form method="post" th:action="@{/sign-up}" th:object="${signUpForm}">
+  <label for="email">FirstName:<input th:field="*{firstName}" id="firstName" name="firstName"  type="text" required></label>
+  <label for="email">MiddleName:<input th:field="*{middleName}" id="middleName" name="middleName"  type="text"></label>
+  <label for="email">LastName:<input th:field="*{lastName}" id="lastName" name="lastName"  type="text" required></label>
+  <label for="email">Email:<input th:field="*{email}" id="email" name="email"  type="email" required></label>
+  <label for="password">Password:<input th:field="*{password}" id="password" name="password" type="password" required></label>
+  <button type="submit">Sign Up</button>
+</form>
+</body>
+</html>
