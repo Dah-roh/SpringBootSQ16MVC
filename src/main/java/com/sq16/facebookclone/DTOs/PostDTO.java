@@ -14,6 +14,5 @@ import java.util.List;
 public class PostDTO {
     private String contentBody;
     private List<CommentDTO> comments;
-    private Long userId;
     private Users user;
 }
