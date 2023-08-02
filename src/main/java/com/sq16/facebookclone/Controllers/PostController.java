@@ -36,8 +36,8 @@ public class PostController {
 
     @PostMapping("/post")
     public ModelAndView savePost( PostDTO postDTO){
-//        Users user =  userService.findById(postDTO.getUser().getId());
-//        postDTO.setUser(user);
+        Users user =  userService.findById(postDTO.getUser().getId());
+        postDTO.setUser(user);
         postService.savePost(postDTO);
         List<Post> postList =  postService.findAllPostByUserId(postDTO.getUser().getId());
         log.info(" Here is this users post: "+ postList);
